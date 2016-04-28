@@ -1,6 +1,18 @@
 {% extends "ll_app/base.html" %}
+{% block header %}
+    <div class='jumbotron'>
+        <h1>Write your shit.</h1>
+    </div>
+{% endblock header %}
 
 {% block content %}
-<p>Learning Log helps you keep track of shit, for any topic you think is worth
-remembering shit about.</p>
+    <h2>
+        <a href="{% url 'users:register' %}">Register an account</a> to make
+        your own unrooted log, and list the topics you're working on.
+    </h2>
+    <h2>
+        Whenever you learn something new about a topic, hear an interesting
+        anecdote, or just have some shit bouncing around your brain that you
+        want to dump somewhere, make an entry in your log.
+    </h2>
 {% endblock content %}
