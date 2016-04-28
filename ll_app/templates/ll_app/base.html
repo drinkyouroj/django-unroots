@@ -3,6 +3,17 @@
   <a href="{% url 'll_app:index' %}">Home</a>
   <br />
   <a href="{% url 'll_app:topics' %}">Topics</a>
+  {% if user.is_authenticated %}
+    <p>
+      Hello, {{ user.username }}.<br />
+      <a href="{% url 'users:logout' %}">log out</a>
+    </p>
+  {% else %}
+    <p>
+      <a href="{% url 'users:register' %}">register</a> <br />
+      <a href="{% url 'users:login' %}">log in</a>
+    </p>
+  {% endif %}
 </p>
 
 {% block content %}{% endblock content %}
